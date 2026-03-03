@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body, #root {
+    height: 100%;
+    background-color: #080a0f;
+    color: #cbd5e1;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #263244; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+  ::selection { background: rgba(245, 158, 11, 0.2); color: #fcd34d; }
+}
+
+@layer components {
+  .panel {
+    @apply bg-[#0f1319] border border-[#1e2836] rounded-lg;
+  }
+
+  .panel-inner {
+    @apply bg-[#131820] border border-[#1e2836] rounded-md;
+  }
+
+  .btn {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-mono
+           transition-all duration-150 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-amber-500 hover:bg-amber-400 text-ink-950 font-medium;
+  }
+
+  .btn-ghost {
+    @apply btn text-slate-400 hover:text-slate-200 hover:bg-[#1e2836];
+  }
+
+  .btn-outline {
+    @apply btn border border-[#263244] text-slate-400 hover:border-amber-500/40
+           hover:text-amber-400 hover:bg-amber-500/5;
+  }
+
+  .tag {
+    @apply inline-flex items-center gap-1 text-[11px] font-mono px-2 py-0.5
+           rounded-sm border;
+  }
+
+  .tag-amber {
+    @apply tag bg-amber-500/10 border-amber-500/25 text-amber-400;
+  }
+
+  .tag-blue {
+    @apply tag bg-blue-500/10 border-blue-500/25 text-blue-400;
+  }
+
+  .tag-green {
+    @apply tag bg-emerald-500/10 border-emerald-500/25 text-emerald-400;
+  }
+
+  .tag-red {
+    @apply tag bg-red-500/10 border-red-500/25 text-red-400;
+  }
+
+  .mono { @apply font-mono text-sm; }
+
+  .cursor-blink::after {
+    content: '▌';
+    @apply text-amber-400 animate-blink ml-0.5;
+  }
+}
+
+/* SQL syntax highlight classes */
+.sql-keyword { color: #f59e0b; font-weight: 500; }
+.sql-string  { color: #86efac; }
+.sql-number  { color: #93c5fd; }
+.sql-comment { color: #475569; font-style: italic; }
+.sql-table   { color: #c4b5fd; }
+
+/* Plotly overrides */
+.js-plotly-plot .plotly .modebar {
+  background: transparent !important;
+}
+.js-plotly-plot .plotly .modebar-btn path {
+  fill: #475569 !important;
+}
