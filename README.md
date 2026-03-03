@@ -1,4 +1,4 @@
-# NL-SQL Analyst
+# NLP-SQL Analyst
 
 A natural language interface to a SQL database, powered by Claude. Type a question in plain English, get back the SQL, the results, and a chart — all in one shot.
 
